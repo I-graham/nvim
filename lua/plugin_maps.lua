@@ -23,6 +23,8 @@ end, { desc = "general format file" })
 
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
 
+map("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "telescope oldfiles" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "telescope find buffers" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map(
   "n",

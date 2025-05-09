@@ -1,5 +1,4 @@
-local opt = vim.opt
-local o = vim.o
+local o = vim.opt
 local g = vim.g
 
 -- add binaries installed by mason.nvim to path
@@ -18,7 +17,7 @@ o.splitright = true
 
 o.updatetime = 250
 
-opt.fillchars = { eob = " " }
+o.fillchars = { eob = " " }
 o.ignorecase = true
 o.smartcase = true
 o.mouse = "a"

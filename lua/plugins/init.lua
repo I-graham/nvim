@@ -90,11 +90,40 @@ return {
     end,
   },
   {
-    'hrsh7th/nvim-cmp',
-    "hrsh7th/cmp-path",
+    'stevearc/conform.nvim',
+    opts = {},
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          lua = { "stylua" },
+          -- Conform will run multiple formatters sequentially
+          python = { "isort", "black" },
+          -- You can customize some of the format options for the filetype (:help conform.format)
+          rust = { "rustfmt", lsp_format = "fallback" },
+        },
+      })
+    end
   },
   {
-    "hrsh7th/cmp-nvim-lsp",
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require "config.cmp"
+    end
+  },
+  {
+    'hrsh7th/cmp-vsnip',
+  },
+  {
+    'hrsh7th/vim-vsnip'
+  },
+  {
+    'hrsh7th/cmp-path',
+  },
+  {
+    'hrsh7th/hrsh7th/cmp-nvim-lsp-signature-help',
+  },
+  {
+    'hrsh7th/cmp-nvim-lsp',
     lazy = false,
     config = function() 
       require("cmp").setup.buffer {
@@ -168,7 +197,14 @@ return {
     lazy = false,
     config = function() 
       require("cd-project").setup({
-        projects_picker = "telescope"
+        projects_picker = "telescope",
+        hooks = {
+          {
+            callback = function(_)
+              vim.cmd("Telescope find_files")
+            end,
+          }
+        }
       })
     end
   },
