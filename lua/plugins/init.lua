@@ -120,7 +120,7 @@ return {
     'hrsh7th/cmp-path',
   },
   {
-    'hrsh7th/hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
   },
   {
     'hrsh7th/cmp-nvim-lsp',
